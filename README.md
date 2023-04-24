@@ -1,7 +1,7 @@
 # WaveSimulation_Matlab
 **Author:** zhaoqingwei  
 **Date:** April 24, 2023  
-**email:**[zhaoqwei001@163.com](zhaoqwei001@163.com)  
+**email:** [zhaoqwei001@163.com](zhaoqwei001@163.com)  
 
 
 ## Main Purpose:
@@ -30,8 +30,8 @@ Industrialization code, I recommend C, CUDA, MPI.
 
 3-dimension program cost memory num\*nz\*nx\*ny\*8/1024/1024(MB).Care about memory。
 
-while nz=nx=ny=200,num=10; cost memory:610MB
-while nz=nx=ny=600,num=50; cost memory:80GB
+while nz=nx=ny=200,num=10; cost memory:610MB.   
+while nz=nx=ny=600,num=50; cost memory:80GB.   
 
 ## Thinks
 
