@@ -17,6 +17,7 @@ Industrialization code, I recommend C, CUDA, MPI.
 
 ## Keyword
 
+* **simple** **simple** **simple**!
 * 2-dimension; 3-dimension
 * acoustic wave;elastic wave;surface wave
 * sponge absorbing boundary condition;Split Perfectly Matched Layer;Convolutional Perfectly Matched Layer
@@ -35,3 +36,6 @@ while nz=nx=ny=600,num=50; cost memory:80GB
 
 RToax [https://github.com/Rtoax](https://github.com/Rtoax)  
 Guiting-geo [https://github.com/Guiting-geo](https://github.com/Guiting-geo)
+[Madagascar](https://reproducibility.org)  
+[seismic unix (SU)](https://github.com/JohnWStockwellJr/SeisUnix)
+[CREWES](https://www.crewes.org/)
