@@ -1,7 +1,7 @@
 # WaveSimulation_Matlab
-**Author:** zhaoqingwei
-**Date:** April 24, 2023
-**email:**[zhaoqwei001@163.com](zhaoqwei001@163.com)
+**Author:** zhaoqingwei  
+**Date:** April 24, 2023  
+**email:**[zhaoqwei001@163.com](zhaoqwei001@163.com)  
 
 
 ## Main Purpose:
