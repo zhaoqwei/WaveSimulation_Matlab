@@ -9,7 +9,7 @@ I majored in geophysics with a direction in seismic exploration. Wave Simulation
 Industrialization code, I recommend C, CUDA, MPI.
 
 
-## keyword
+## Keyword
 
 * 2-dimension; 3-dimension
 * acoustic wave;elastic wave;surface wave
@@ -25,7 +25,7 @@ Industrialization code, I recommend C, CUDA, MPI.
 while nz=nx=ny=200,num=10; cost memory:610MB
 while nz=nx=ny=600,num=50; cost memory:80GB
 
-## thinks
+## Thinks
 
-Rong Tao [RToax](https://github.com/Rtoax)
-chen guiting [Guiting-geo](https://github.com/Guiting-geo)
+RToax [https://github.com/Rtoax](https://github.com/Rtoax)  
+Guiting-geo [https://github.com/Guiting-geo](https://github.com/Guiting-geo)
