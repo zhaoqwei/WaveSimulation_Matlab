@@ -36,7 +36,7 @@ while nz=nx=ny=600,num=50; cost memory:80GB.
 ## Thinks
 
 RToax [https://github.com/Rtoax](https://github.com/Rtoax)  
-Guiting-geo [https://github.com/Guiting-geo](https://github.com/Guiting-geo)
+Guiting-geo [https://github.com/Guiting-geo](https://github.com/Guiting-geo)   
 [Madagascar](https://reproducibility.org)  
 [seismic unix (SU)](https://github.com/JohnWStockwellJr/SeisUnix)  
 [CREWES](https://www.crewes.org/)  
