@@ -41,7 +41,7 @@ HXX0=vx0;HXX1=vx0;
 HXZ0=vx0;HXZ1=vx0;
 HZX0=vx0;HZX1=vx0;
 HZZ0=vx0;HZZ1=vx0;
-cpmln=20;[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],cpmln,max(vp(:)),dt); aaz(1:cpmln,:)=0;bbz(1:cpmln,:)=1;
+cpmln=20;[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],cpmln,max(vp(:)),dt,dz); aaz(1:cpmln,:)=0;bbz(1:cpmln,:)=1;
 
 nn=3;
 dxd=FDcoeffDx(nn);ddz0=dxd';ddz1=[dxd 0]';ddx0=ddz0';ddx1=ddz1';
