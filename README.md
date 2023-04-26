@@ -40,3 +40,12 @@ Guiting-geo [https://github.com/Guiting-geo](https://github.com/Guiting-geo)
 [Madagascar](https://reproducibility.org)  
 [seismic unix (SU)](https://github.com/JohnWStockwellJr/SeisUnix)  
 [CREWES](https://www.crewes.org/)  
+
+## Imag
+- 2D acoustic wave  
+![](./img/2DAcoustic.gif)
+- 2D elastic wave  
+![](./img/2DElasticVx.gif)
+![](./img/2DElasticVz.gif)
+- 3D acoustic wave  
+![](./img/3DAcoustic.gif)
