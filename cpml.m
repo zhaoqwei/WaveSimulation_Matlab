@@ -1,13 +1,14 @@
-function [ aaz,bbz,aax,bbx,aay,bby ] = cpml( R,Size,pmln,Vmax,dt)
+function [ aaz,bbz,aax,bbx,aay,bby ] = cpml( R,Size,pmln,Vmax,dt,dz)
 %CPML: make Conv Perfectly Matched Layer
 % By zhaoqingwei
 % Chengdu University of Technology (CDUT), 2021-2025
-    if nargin < 5
+    if nargin < 6
         R=1e-10;
         pmln=20;
         Size=[600 600];
         Vmax=2000;
         dt=0.001;
+        dz=10;
     end
     nD=length(Size);
     if nD<2
@@ -27,7 +28,7 @@ function [ aaz,bbz,aax,bbx,aay,bby ] = cpml( R,Size,pmln,Vmax,dt)
                 ddz(iz,:)=(-z+I+iz)*(-z+I+iz)/I/I*ones(1,x);
             end
         end
-        AA=-log(R)*Vmax*3/2/pmln;
+        AA=-log(R)*Vmax*3/2/(pmln*dz);
         ddz=ddz*AA;
         bbz=exp(-ddz*dt);
         aaz=bbz-1;
@@ -48,7 +49,7 @@ function [ aaz,bbz,aax,bbx,aay,bby ] = cpml( R,Size,pmln,Vmax,dt)
                 ddz(iz,:,:)=(-z+I+iz)*(-z+I+iz)/I/I*ones(x,y);
             end
         end
-        AA=-log(R)*Vmax*3/2/pmln;
+        AA=-log(R)*Vmax*3/2/(pmln*dz);
         ddz=ddz*AA;
         bbz=exp(-ddz*dt);aaz=bbz-1;
         bbx = permute(bbz,[2 1 3]);aax = permute(aaz,[2 1 3]);

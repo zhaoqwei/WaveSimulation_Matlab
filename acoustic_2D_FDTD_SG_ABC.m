@@ -26,7 +26,7 @@ vx0=zeros(nz,nx);vx1=vx0;
 vz0=vx0;vz1=vx0;
 p0=vx0;p1=vx0;
 
-[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],20,max(v(:)),dt);
+[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],20,max(v(:)),dt,dz);
 
 nn=3;
 dxd=FDcoeffDx(nn);ddz0=dxd';ddz1=[dxd 0]';ddx0=ddz0';ddx1=ddz1';

@@ -27,7 +27,7 @@ vz0=vx0;vz1=vx0;
 p0=vx0;p1=vx0;
 px0=vx0;px1=vx0;pz0=vx0;pz1=vx0;
 
-[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],20,max(v(:)),dt);
+[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],20,max(v(:)),dt,dz);
 ddz=-log(bbz)/dt;ddx=-log(bbx)/dt;
 
 nn=3;

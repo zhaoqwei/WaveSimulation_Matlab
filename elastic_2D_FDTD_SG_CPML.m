@@ -40,7 +40,7 @@ HXX0=vx0;HXX1=vx0;
 HXZ0=vx0;HXZ1=vx0;
 HZX0=vx0;HZX1=vx0;
 HZZ0=vx0;HZZ1=vx0;
-[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],20,max(vp(:)),dt);
+[aaz,bbz,aax,bbx] = cpml(1e-10,[nz nx],20,max(vp(:)),dt,dz);
 
 nn=3;
 dxd=FDcoeffDx(nn);ddz0=dxd';ddz1=[dxd 0]';ddx0=ddz0';ddx1=ddz1';
