@@ -14,7 +14,7 @@ clc,clear
 
 FM=20;
 DT=0.001;dt=DT;
-T=4;
+T=2;
 nx=600;
 nz=600;
 DH=10;dx=DH;dz=DH;
@@ -59,10 +59,10 @@ for	t=DT:DT:T
     vz1(z0,x0)=vz1(z0,x0)+s(k);
     vx1(1:2,:)=0;
     vz1(1:2,:)=0;
-    vx1(1,:)=vx1(3,:)+2*imfilter(vz1(3,:),[coeff]);
-    vz1(1,:)=vz1(3,:)+2*(1-2*(c55(3,:)./c11(3,:))).*imfilter(vx1(1,:),[coeff 0]);
-    vx1(2,:)=vx1(1,:)+2*imfilter(vz1(3,:),[coeff]);
-    vz1(2,:)=vz1(1,:)+2*(1-2*(c55(3,:)./c11(3,:))).*imfilter(vx1(2,:),[coeff 0]);
+    vx1(1,:)=vx1(3,:)+2*imfilter(vz1(3,:),ddx0);
+    vz1(1,:)=vz1(3,:)+2*(1-2*(c55(3,:)./c11(3,:))).*imfilter(vx1(1,:),ddx1);
+    vx1(2,:)=vx1(1,:)+2*imfilter(vz1(3,:),ddx0);
+    vz1(2,:)=vz1(1,:)+2*(1-2*(c55(3,:)./c11(3,:))).*imfilter(vx1(2,:),ddx1);
     
     HXX1=bbx.*HXX0+aax.*TX.*imfilter(vx1,ddx1)/dt;
     HXZ1=bbz.*HXZ0+aaz.*TZ.*imfilter(vx1,ddz1)/dt;
@@ -80,7 +80,7 @@ for	t=DT:DT:T
     taoxx0=taoxx1;taozz0=taozz1;taoxz0=taoxz1;
     vz0=vz1;vx0=vx1;
     
-    if mod(t,1)==0
+    if mod(t,0.5)==0
         figure();
         imagesc(vz1);
     end

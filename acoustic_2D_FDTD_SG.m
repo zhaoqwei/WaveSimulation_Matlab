@@ -12,7 +12,7 @@ clc,clear
 
 FM=20;
 DT=0.001;dt=DT;
-T=4;
+T=2;
 nx=600;
 nz=600;
 DH=10;dx=DH;dz=DH;
@@ -37,7 +37,7 @@ for	t=DT:DT:T
     p0=p1;
     vz0=vz1;vx0=vx1;
     
-    if mod(t,1)==0
+    if mod(t,0.5)==0
         figure();
         imagesc(p1);
     end

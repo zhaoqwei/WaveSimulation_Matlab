@@ -4,7 +4,7 @@ clc,clear
 % Chengdu University of Technology (CDUT), 2021-2025
 FM=20;
 DT=0.001;
-T=4;
+T=2;
 nx=600;
 nz=600;
 DH=10;
@@ -26,7 +26,7 @@ for	t=DT:DT:T
 	u1=u2;
 	u2=u3;
     
-    if mod(t,1)==0
+    if mod(t,0.5)==0
         figure();
         imagesc(u3);
     end

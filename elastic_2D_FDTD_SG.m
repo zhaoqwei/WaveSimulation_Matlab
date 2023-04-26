@@ -12,13 +12,13 @@ clc,clear
 
 FM=20;
 DT=0.001;dt=DT;
-T=4;
+T=2;
 nx=600;
 nz=600;
 DH=10;dx=DH;dz=DH;
 
 s=wavelet(FM,DT,T);
-vp=ones(nz,nx)*2000;vs=vp/2;rou=ones(nz,nx)*2;
+vp=ones(nz,nx)*4000;vs=vp/2;rou=ones(nz,nx)*2;
 lamda=rou.*(vp.*vp-vs.*vs*2);mu=rou.*vs.*vs;
 c11=rou.*vp.*vp;c13=rou.*(vp.*vp-vs.*vs*2);c33=c11;c55=rou.*vs.*vs;%各向同性
 % Epsilon=0.25*ones(600,600);Delta=0.1*ones(600,600);
@@ -49,7 +49,7 @@ for	t=DT:DT:T
     taoxx0=taoxx1;taozz0=taozz1;taoxz0=taoxz1;
     vz0=vz1;vx0=vx1;
     
-    if mod(t,1)==0
+    if mod(t,0.5)==0
         figure();
         imagesc(vz1);
     end

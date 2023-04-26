@@ -16,7 +16,7 @@ clc,clear
 
 FM=20;
 DT=0.001;dt=DT;
-T=4;
+T=2;
 nx=200;
 ny=200;
 nz=200;
@@ -71,7 +71,7 @@ for	t=DT:DT:T
     taoxz0=taoxz1;
     taoxy0=taoxy1;
     taoyz0=taoyz1;
-    if mod(t,1)==0
+    if mod(t,0.5)==0
         figure();
         imagesc(vz1(:,:,y0)); 
     end

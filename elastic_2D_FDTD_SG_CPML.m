@@ -13,13 +13,13 @@ clc,clear
 
 FM=20;
 DT=0.001;dt=DT;
-T=4;
+T=2;
 nx=600;
 nz=600;
 DH=10;dx=DH;dz=DH;
 
 s=wavelet(FM,DT,T);
-vp=ones(nz,nx)*2000;vs=vp/2;rou=ones(600,600)*2;
+vp=ones(nz,nx)*4000;vs=vp/2;rou=ones(600,600)*2;
 lamda=rou.*(vp.*vp-vs.*vs*2);mu=rou.*vs.*vs;
 c11=rou.*vp.*vp;c13=rou.*(vp.*vp-vs.*vs*2);c33=c11;c55=rou.*vs.*vs;%各向同性
 % Epsilon=0.25*ones(600,600);Delta=0.1*ones(600,600);
@@ -65,10 +65,12 @@ for	t=DT:DT:T
     taozz1=taozz0+c33.*TZ.*imfilter(vz1,ddz1)+c13.*TX.*imfilter(vx1,ddx1)+c33.*HZZ1*dt+c13.*HXX1*dt;
     taoxz1=taoxz0+c55.*TZ.*imfilter(vx1,ddz0)+c55.*TX.*imfilter(vz1,ddx0)+c55.*HXZ1*dt+c55.*HZX1*dt;
     
+    EXX0=EXX1;EXZ0=EXZ1;EZX0=EZX1;EZZ0=EZZ1;
+    HXX0=HXX1;HXZ0=HXZ1;HZX0=HZX1;HZZ0=HZZ1;
     taoxx0=taoxx1;taozz0=taozz1;taoxz0=taoxz1;
     vz0=vz1;vx0=vx1;
     
-    if mod(t,1)==0
+    if mod(t,0.5)==0
         figure();
         imagesc(vz1);
     end
