@@ -36,7 +36,7 @@ vy0=vx0;vy1=vx0;vy2=vx0;
 
 nn=2;
 dxx=FDcoeffDxx(nn);dzz=dxx';dyy=permute(dzz,[3 2 1]);
-dxz=FDcoeffDxz();dxy=permute(dxz,[3 2 1]);dyz=permute(dxz,[1 3 2]);
+dxz=FDcoeffDxz(nn);dxy=permute(dxz,[3 2 1]);dyz=permute(dxz,[1 3 2]);
 TX=dt/dx;TZ=dt/dz;TY=dt/dy;TTXX=TX*TX;
 for	t=DT:DT:T
     disp(t);

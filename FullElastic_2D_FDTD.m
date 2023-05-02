@@ -26,7 +26,7 @@ vz0=vx0;vz1=vx0;vz2=vx0;
 z0=round(nz/2);x0=round(nx/2);
 
 nn=2;
-dxx=FDcoeffDxx(nn);dxz=FDcoeffDxz();dzz=dxx';
+dxx=FDcoeffDxx(nn);dxz=FDcoeffDxz(nn);dzz=dxx';
 TX=dt/dx;TZ=dt/dz;TTXX=TX*TX;
 for	t=DT:DT:T
     disp(t);
@@ -47,6 +47,6 @@ for	t=DT:DT:T
     
     if mod(t,0.5)==0
         figure();
-        imagesc(vx2);
+        imagesc(vz2);
     end
 end
