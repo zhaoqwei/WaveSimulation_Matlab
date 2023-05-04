@@ -40,14 +40,12 @@ for	t=DT:DT:T
     vx1=vx0+(TZ.*imfilter(taoxz0,ddz1)+TX.*imfilter(taoxx0,ddx0))./rou;%
     vz1=vz0+(TZ.*imfilter(taozz0,ddz0)+TX.*imfilter(taoxz0,ddx1))./rou;
     
-%     vz1(z0,x0)=vz1(z0,x0)+s(k);
+    vz1(z0,x0)=vz1(z0,x0)+s(k);
     
     taoxx1=taoxx0+c13.*TZ.*imfilter(vz1,ddz1)+c11.*TX.*imfilter(vx1,ddx1);
     taozz1=taozz0+c33.*TZ.*imfilter(vz1,ddz1)+c13.*TX.*imfilter(vx1,ddx1);
     taoxz1=taoxz0+c55.*TZ.*imfilter(vx1,ddz0)+c55.*TX.*imfilter(vz1,ddx0);
     
-    taoxx1(z0,x0)=taoxx1(z0,x0)+s(k);
-    taozz1(z0,x0)=taozz1(z0,x0)+s(k);
     taoxx0=taoxx1;taozz0=taozz1;taoxz0=taoxz1;
     vz0=vz1;vx0=vx1;
     
