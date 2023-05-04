@@ -73,10 +73,10 @@ for	t=DT:DT:T
     k=round(t/DT);
     EXX1=bbx.*EXX0+aax.*TX.*imfilter(taoxx0,ddx1)/dt;
     EXY1=bby.*EXY0+aay.*TY.*imfilter(taoxy0,ddy1)/dt;
-    EXZ1=bbz.*EXY0+aaz.*TZ.*imfilter(taoxz0,ddz1)/dt;
+    EXZ1=bbz.*EXZ0+aaz.*TZ.*imfilter(taoxz0,ddz1)/dt;
     EYX1=bbx.*EYX0+aax.*TX.*imfilter(taoxy0,ddx0)/dt;
     EYY1=bby.*EYY0+aay.*TY.*imfilter(taoyy0,ddy0)/dt;
-    EYZ1=bbz.*EYY0+aaz.*TZ.*imfilter(taoyz0,ddz1)/dt;
+    EYZ1=bbz.*EYZ0+aaz.*TZ.*imfilter(taoyz0,ddz1)/dt;
     EZX1=bbx.*EZX0+aax.*TX.*imfilter(taoxz0,ddx0)/dt;
     EZY1=bby.*EZY0+aay.*TY.*imfilter(taoyz0,ddy1)/dt;
     EZZ1=bbz.*EZZ0+aaz.*TZ.*imfilter(taozz0,ddz0)/dt;
@@ -85,7 +85,7 @@ for	t=DT:DT:T
     vy1=vy0+(TX.*imfilter(taoxy0,ddx0)+TY.*imfilter(taoyy0,ddy0)+TZ.*imfilter(taoyz0,ddz1)+dt*EYX1+dt*EYY1+dt*EYZ1)./rou;
     vz1=vz0+(TX.*imfilter(taoxz0,ddx0)+TY.*imfilter(taoyz0,ddy1)+TZ.*imfilter(taozz0,ddz0)+dt*EZX1+dt*EZY1+dt*EZZ1)./rou;
     
-%     vz1(z0,x0,y0)=vz1(z0,x0,y0)+s(k);
+    vz1(z0,x0,y0)=vz1(z0,x0,y0)+s(k);
 
     HXX1=bbx.*HXX0+aax.*TX.*imfilter(vx1,ddx0)/dt;
     HXY1=bby.*HXY0+aay.*TY.*imfilter(vx1,ddy0)/dt;
@@ -103,11 +103,7 @@ for	t=DT:DT:T
     taoyz1=taoyz0                            +c44.*TZ.*imfilter(vy1,ddz0)+c44.*TY.*imfilter(vz1,ddy0)+c44.*HYZ1*dt+c44.*HZY1*dt;
     taoxz1=taoxz0+c55.*TZ.*imfilter(vx1,ddz0)                             +c55.*TX.*imfilter(vz1,ddx1)+c55.*HXZ1*dt+c55.*HZX1*dt;
     taoxy1=taoxy0+c66.*TY.*imfilter(vx1,ddy0)+c66.*TX.*imfilter(vy1,ddx1)                          +c66.*HXY1*dt+c66.*HYX1*dt;
-    
-    taoxx1(z0,x0,y0)=taoxx1(z0,x0,y0)+s(k);
-    taoyy1(z0,x0,y0)=taoyy1(z0,x0,y0)+s(k);
-    taozz1(z0,x0,y0)=taozz1(z0,x0,y0)+s(k);
-    
+        
     EXX0=EXX1;EXY0=EXY1;EXZ0=EXZ1;
     EYX0=EYX1;EYY0=EYY1;EYZ0=EYZ1;
     EZX0=EZX1;EZY0=EZY1;EZZ0=EZZ1;
