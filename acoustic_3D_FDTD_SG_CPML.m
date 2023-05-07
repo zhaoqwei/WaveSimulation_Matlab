@@ -60,7 +60,9 @@ for	t=DT:DT:T
     p1(z0,x0,y0)=p1(z0,x0,y0)+s(k);
     p0=p1;
     vz0=vz1;vx0=vx1;vy0=vy1;
-
+    EXX0=EXX1;EYY0=EYY1;EZZ0=EZZ1;
+    HXX0=HXX1;HYY0=HYY1;HZZ0=HZZ1;
+    
     if mod(t,0.5)==0
         figure();
         imagesc(p1(:,:,y0)); 
