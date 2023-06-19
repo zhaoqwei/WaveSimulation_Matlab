@@ -16,6 +16,7 @@ T=2;
 nx=600;
 nz=600;
 DH=10;dx=DH;dz=DH;
+npml=20;
 
 s=wavelet(FM,DT,T);
 v=ones(nz,nx)*2000;
@@ -29,7 +30,7 @@ EXX0=vx0;EXX1=vx0;
 EZZ0=vx0;EZZ1=vx0;
 HXX0=vx0;HXX1=vx0;
 HZZ0=vx0;HZZ1=vx0;
-[bbz,ccz,ddz,bbx,ccx,ddx] = cfspml(1e-4,[nz nx],npml,max(v(:)),dt,dz,10,FM*pi);
+[bbz,ccz,ddz,bbx,ccx,ddx] = cfspml(1e-4,[nz nx],npml,max(v(:)),dt,dz,2,FM*pi);
 aax=ccx;aaz=ccz;
 nn=3;
 dxd=FDcoeffDx(nn);ddz0=dxd';ddz1=[dxd 0]';ddx0=ddz0';ddx1=ddz1';
